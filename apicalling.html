@@ -3,176 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<style>
-    .main{
-        background-color: antiquewhite;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5%;
-    }
-    .box{
-        padding: 2%;
-        height: 450px;
-        width: 250px;
-        border: 2px solid lightslategray;
-        margin: 2%;
-    }
-    .box img{
-        width: 90%;
-        height: auto;
-    }
-</style>
-
+    <title>Recipe Gallery</title>
+    <style>
+        :root {
+            --primary-color: #4a4e69;
+            --secondary-color: #9a8c98;
+            --accent-color: #c9ada7;
+            --background-color: #f2e9e4;
+            --text-color: #22223b;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 280px;
+            transition: transform 0.3s ease;
+        }
+        
+        .box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .box-content {
+            padding: 1rem;
+        }
+        
+        .box h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .box h3 {
+            color: var(--secondary-color);
+        }
+        
+        .box p {
+            color: var(--text-color);
+        }
+        
+        @media (max-width: 768px) {
+            .main {
+                gap: 1rem;
+            }
+            
+            .box {
+                width: calc(50% - 1rem);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .box {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Delicious Recipe Gallery</h1>
+    </header>
+    
     <div class="main">
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <div class="box">
             <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
+            <div class="box-content">
+                <h2></h2>
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
-        <div class="box">
-            <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
-        </div>
-        <div class="box">
-            <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
-        </div>
-        <div class="box">
-            <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
-        </div>
-        <div class="box">
-            <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
-        </div>
-        <div class="box">
-            <img src="" alt="">
-            <h2></h2>
-            <h1></h1>
-            <p></p>
-        </div>
-        
+
+
+
+
+  
     </div>
 
     <script>
         let cards = document.querySelectorAll(".box");
 
         async function getData(){
+            let response = await fetch("https://dummyjson.com/recipes")
+            let data = await response.json()
 
-            let responce = await fetch("https://dummyjson.com/recipes")
-            let data = await responce.json()
-            //console.log(data)
-
-            console.log(data.rec)
-
-            cards.forEach((element,i)=>{
-                element.getElementsByTagName("img")[0].src=data.recipes[i].image;
-                element.getElementsByTagName("h2")[0].innerHTML=("Name:"+data.recipes[i].name);
-                element.getElementsByTagName("p")[0].innerHTML=data.recipes[i].ingredients.slice(0,2);
+            cards.forEach((element,i) => {
+                if (data.recipes[i]) {
+                    element.getElementsByTagName("img")[0].src = data.recipes[i].image;
+                    element.getElementsByTagName("h2")[0].innerHTML = data.recipes[i].name;
+                    element.getElementsByTagName("h3")[0].innerHTML = "Cuisine: " + data.recipes[i].cuisine;
+                    element.getElementsByTagName("p")[0].innerHTML = "Ingredients: " + data.recipes[i].ingredients.slice(0,2).join(", ");
+                }
             })
-
         }
         getData()
     </script>

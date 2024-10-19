@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyJanatha Bank - Account Holder</title>
+    <title>My Janatha Bank - Account Holder</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
+            color: #333;
         }
+
         .header {
-            background-color: #003366;
+            background-color: #0033A0;
             color: white;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
+            letter-spacing: 2px;
         }
+
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -29,24 +35,24 @@
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
-        .form-container, .info-container {
-            margin-bottom: 30px;
-        }
+
         h1, h2 {
-            color: #003366;
+            color: #D50032; 
             margin-bottom: 20px;
         }
+
         input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 20px;
             border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 16px;
         }
+
         button {
             padding: 12px 24px;
-            background-color: #4CAF50;
+            background-color: #0033A0; 
             color: white;
             border: none;
             border-radius: 4px;
@@ -54,26 +60,30 @@
             font-size: 16px;
             transition: background-color 0.3s;
         }
+
         button:hover {
-            background-color: #45a049;
+            background-color: #D50032; 
         }
+
         .info-container p {
             margin: 10px 0;
             color: #333;
             font-size: 16px;
         }
+
         .back-home {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #003366;
+            padding: 12px 24px;
+            background-color: #0033A0;
             color: white;
             text-decoration: none;
             border-radius: 4px;
             transition: background-color 0.3s;
         }
+
         .back-home:hover {
-            background-color: #002855;
+            background-color: #D50032;
         }
 
         
@@ -82,37 +92,39 @@
                 padding: 20px;
                 margin: 20px;
             }
-            .logo {
-                font-size: 20px;
-            }
+
             h1 {
                 font-size: 22px;
             }
+
             h2 {
                 font-size: 20px;
             }
+
             input[type="password"] {
-                padding: 8px;
+                padding: 10px;
                 font-size: 14px;
             }
+
             button {
                 padding: 10px 20px;
                 font-size: 14px;
             }
+
             .info-container p {
                 font-size: 14px;
             }
+
             .back-home {
-                padding: 8px 16px;
+                padding: 10px 20px;
                 font-size: 14px;
             }
         }
-
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="logo">MyJanatha Bank</div>
+        <div class="logo">My Janatha Bank</div>
     </div>
     <div class="container">
         <div class="form-container" id="pin-form">
@@ -123,16 +135,15 @@
 
         <div id="info-container" class="info-container" style="display: none;">
             <h2>Account Holder Information</h2>
-            <p><strong>Full Name:</strong> Manoj Paravada</p>
-            <p><strong> Email Address:</strong> manojparavada.com</p>
-            <p><strong>Account Number:</strong> 9863227880786549</p>
-            <p><strong>Date of Birth:</strong> 2001-10-14</p>
-            <p><strong>Address:</strong> Visakhapatnam , Andhra </p>
-            <p><strong>Phone Number:</strong>75394474456 </p>
-            <p><strong>Aadhar Number:</strong> 8096-8355-8264</p>
-            <p><strong>Current Balance:</strong> ₹100,000</p>
+            <p><strong>Full Name:</strong> Manoj</p>
+            <p><strong>Email Address:</strong> manoj@gmail.com</p>
+            <p><strong>Account Number:</strong> 1234 5678 9012 3456</p>
+            <p><strong>Date of Birth:</strong> 2000-10-14</p>
+            <p><strong>Address:</strong> gajuwaka, visakhapatnam</p>
+            <p><strong>Phone Number:</strong> (555) 7528947637</p>
+            <p><strong>Current Balance:</strong> ₹150,000</p>
         </div>
-        
+
         <a href="home.html" class="back-home">Back to Home</a>
     </div>
 

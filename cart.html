@@ -15,6 +15,9 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .top-header {
             background-color: #1a1a2e;
@@ -44,15 +47,21 @@
         .top-header-links a:hover {
             color: #ff9900;
         }
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px;
+        }
         .cart-container {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 15px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
+            width: 100%;
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
         .empty-cart {
             text-align: center;
             padding: 40px 20px;
@@ -60,51 +69,100 @@
         }
         .empty-cart h2 {
             margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
         .cart-item {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 3px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cart-item div {
-    margin-right: 5px;
-}
-
-.cart-item button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-left: 3px;
-}
-
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-item div {
+            margin-right: 15px;
+        }
+        .cart-item button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
         .cart-item button:hover {
             background-color: #e63939;
         }
-        @media (max-width: 600px) {
-    .top-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .top-header-links {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        gap: 15px;
-    }
-}
-
-
+        .cart-summary {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+        .cart-summary h3 {
+            margin-bottom: 15px;
+        }
+        .cart-total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .checkout-btn:hover {
+            background-color: #e68a00;
+        }
+        .cart-tips {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e6f3ff;
+            border-radius: 8px;
+        }
+        .cart-tips h3 {
+            margin-bottom: 15px;
+        }
+        .cart-tips ul {
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            background-color: #f0f0f0;
+        }
+        @media (max-width: 768px) {
+            .top-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .top-header-links {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 15px;
+            }
+            .main-content {
+                padding: 15px;
+            }
+            .cart-container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,53 +172,87 @@
             <div class="top-header-links">
                 <a href="#"><i class="fas fa-map-marker-alt"></i> Location</a>
                 <a href="#"><i class="fas fa-user"></i> Account</a>
-               
                 <a href="#"><i class="fas fa-box"></i> Orders</a>
             </div>
         </div>
     </header>
 
-    <div class="cart-container">
-        <div class="empty-cart">
-            <h2>Your Cart is empty</h2>
-            <p>Missing Cart items? Login to see the items you added previously.</p>
-            <Login</a>
-            <p>Shop today’s deals</p>
-            <p>Do you have a promotional code? We'll ask you to enter your claim code when it's time to pay.</p>
+    <div class="main-content">
+        <div class="cart-container">
+            <div class="empty-cart">
+                <h2>Your Cart</h2>
+                <div id="cart-items"></div>
+            </div>
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <p>Subtotal: <span id="subtotal">₹0.00</span></p>
+                <p>Shipping: <span id="shipping">₹0.00</span></p>
+                <p>Tax: <span id="tax">₹0.00</span></p>
+                <p class="cart-total">Total: <span id="total">₹0.00</span></p>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+            <div class="cart-tips">
+                <h3>Shopping Cart Tips</h3>
+                <ul>
+                    <li>Prices and availability may change. Check before completing your purchase.</li>
+                    <li>Consider adding related items to your cart for a better shopping experience.</li>
+                    <li>Review your cart before checkout to ensure all items are correct.</li>
+                    <li>Check for any available promotions or discounts before finalizing your order.</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <footer>
-        <div style="text-align: center; padding: 20px; font-size: 0.9rem; color: #666;">
-            <p>Policies: Returns Policy | Terms of Use | Security | Privacy | Infringement</p>
-            <p>© 2007-2024 Shopit.com</p>
-        </div>
+        <p>Policies: Returns Policy | Terms of Use | Security | Privacy | Infringement</p>
+        <p>© 2007-2024 Shopit.com</p>
     </footer>
 
     <script>
+        
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         function displayCart() {
-            const cartContainer = document.querySelector('.empty-cart');
+            const cartItems = document.getElementById('cart-items');
+            const subtotal = document.getElementById('subtotal');
+            const shipping = document.getElementById('shipping');
+            const tax = document.getElementById('tax');
+            const total = document.getElementById('total');
+
             if (cart.length === 0) {
-                cartContainer.innerHTML = `
-                    <h2>Your  Cart is empty</h2>
+                cartItems.innerHTML = `
+                    <p>Your cart is empty</p>
                     <p>Missing Cart items? Login to see the items you added previously.</p>
                     <a href="#">Login</a>
                 `;
+                subtotal.textContent = '₹0.00';
+                shipping.textContent = '₹0.00';
+                tax.textContent = '₹0.00';
+                total.textContent = '₹0.00';
             } else {
-                cartContainer.innerHTML = '<h2>Your Cart Items</h2>';
+                let cartTotal = 0;
+                cartItems.innerHTML = '';
                 cart.forEach(item => {
-                    cartContainer.innerHTML += `
+                    cartTotal += item.price;
+                    cartItems.innerHTML += `
                         <div class="cart-item">
                             <div>
                                 <p>${item.name}</p>
-                                <p>Price: ₹${item.price}</p>
+                                <p>Price: ₹${item.price.toFixed(2)}</p>
                             </div>
                             <button onclick="removeFromCart('${item.name}')">Remove</button>
                         </div>
                     `;
                 });
+                const shippingCost = 50;
+                const taxRate = 0.1;
+                const taxAmount = cartTotal * taxRate;
+                const totalAmount = cartTotal + shippingCost + taxAmount;
+
+                subtotal.textContent = `₹${cartTotal.toFixed(2)}`;
+                shipping.textContent = `₹${shippingCost.toFixed(2)}`;
+                tax.textContent = `₹${taxAmount.toFixed(2)}`;
+                total.textContent = `₹${totalAmount.toFixed(2)}`;
             }
         }
 
@@ -168,17 +260,10 @@
             cart = cart.filter(item => item.name !== productName);
             localStorage.setItem('cart', JSON.stringify(cart));
             displayCart();
-            updateCartCount();
-        }
-
-        function updateCartCount() {
-            const cartCount = document.getElementById('cart-count');
-            cartCount.innerText = cart.length;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             displayCart();
-            updateCartCount();
         });
     </script>
 </body>

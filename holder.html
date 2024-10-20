@@ -11,20 +11,44 @@
             padding: 0;
             background-color: #f5f5f5;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .header {
-            background-color: #0033A0;
+            background-color: #0033A0; 
             color: white;
-            padding: 20px 0;
+            padding: 15px 0; 
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 28px; 
             font-weight: bold;
             letter-spacing: 2px;
+        }
+
+        .nav {
+            background-color: #D50032; 
+            padding: 8px 0; 
+            text-align: center;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px; 
+            display: inline-block;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: #FFDD44; 
+            border-radius: 5px;
         }
 
         .container {
@@ -32,8 +56,9 @@
             margin: 40px auto;
             padding: 30px;
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
         }
 
         h1, h2 {
@@ -86,7 +111,32 @@
             background-color: #D50032;
         }
 
-        
+        .footer {
+            background-color: #0033A0;
+            color: white;
+            text-align: center;
+            padding: 15px 0; 
+            margin-top: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px; 
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFDD44; 
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -126,6 +176,13 @@
     <div class="header">
         <div class="logo">My Janatha Bank</div>
     </div>
+    <div class="nav">
+        <a href="home.html">Home</a>
+        <a href="#accounts">Accounts</a>
+        <a href="#loans">Loans</a>
+        <a href="#investments">Investments</a>
+        <a href="#contact">Contact Us</a>
+    </div>
     <div class="container">
         <div class="form-container" id="pin-form">
             <h1>Account Holder Verification</h1>
@@ -145,6 +202,16 @@
         </div>
 
         <a href="home.html" class="back-home">Back to Home</a>
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+            <a href="#about">About Us</a>
+            <a href="#careers">Careers</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms & Conditions</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+        My Janatha Bank. All rights reserved.
     </div>
 
     <script>
